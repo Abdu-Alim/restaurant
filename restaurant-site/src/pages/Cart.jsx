@@ -27,12 +27,12 @@ function Cart() {
       return;
     }
 
-    if (!selectedDistrict || !addressDetails.trim()) { // ИЗМЕНЕНИЕ: Проверка обоих полей
+    if (!selectedDistrict || !addressDetails.trim()) {
       alert('Пожалуйста, выберите район и укажите полный адрес доставки');
       return;
     }
 
-    const fullAddress = `${selectedDistrict}, ${addressDetails}`; // ИЗМЕНЕНИЕ: Комбинируем район + детали
+    const fullAddress = `${selectedDistrict}, ${addressDetails}`;
 
     dispatch(createOrder({
       userId: user.id,
@@ -44,7 +44,7 @@ function Cart() {
         options: item.options
       })),
       total: total,
-      address: fullAddress // ИЗМЕНЕНИЕ: Передаём полный адрес
+      address: fullAddress
     }));
 
     items.forEach(item => {
