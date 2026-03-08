@@ -1,0 +1,77 @@
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.auth-modal {
+  background: #1a1a1a;
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  border: 1px solid #333;
+}
+
+.auth-modal h2 {
+  color: #C89B3C;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.auth-modal input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #2a2a2a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+}
+
+.auth-modal input:focus {
+  outline: none;
+  border-color: #C89B3C;
+}
+
+.auth-modal button {
+  width: 100%;
+  padding: 1rem;
+  background: #C89B3C;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.auth-modal button:hover {
+  background: #b38630;
+}
+
+.auth-modal .switch-btn {
+  background: transparent;
+  color: #C89B3C;
+  border: 1px solid #C89B3C;
+}
+
+.auth-modal .close-btn {
+  background: transparent;
+  color: #666;
+  border: 1px solid #333;
+}
+
+.auth-modal .close-btn:hover {
+  background: #333;
+  color: white;
+}

@@ -1,0 +1,434 @@
+.admin-page {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
+  min-height: 60vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.admin-page h1 {
+  color: #C89B3C;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 1rem;
+}
+
+.admin-tabs button {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: none;
+  color: #b4b4b4;
+  font-size: 1.1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.admin-tabs button::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #C89B3C;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+
+.admin-tabs button:hover {
+  color: white;
+}
+
+.admin-tabs button.active {
+  color: #C89B3C;
+}
+
+.admin-tabs button.active::after {
+  transform: scaleX(1);
+}
+
+.admin-section {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid #333;
+}
+
+.admin-section h2 {
+  color: #C89B3C;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.admin-section h3 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.add-dish-form {
+  background: #2a2a2a;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #333;
+}
+
+.add-dish-form input,
+.add-dish-form textarea,
+.add-dish-form select {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+.add-dish-form input:focus,
+.add-dish-form textarea:focus,
+.add-dish-form select:focus {
+  outline: none;
+  border-color: #C89B3C;
+  box-shadow: 0 0 10px rgba(200, 155, 60, 0.3);
+}
+
+.add-dish-form textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.add-dish-form label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.add-dish-form input[type="checkbox"] {
+  width: auto;
+  margin-bottom: 0;
+}
+
+.add-dish-form button {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #C89B3C 0%, #b38630 100%);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.add-dish-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(200, 155, 60, 0.4);
+}
+
+.dishes-list {
+  background: #2a2a2a;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #333;
+}
+
+.dish-admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+  transition: background 0.3s;
+}
+
+.dish-admin-item:hover {
+  background: #333;
+}
+
+.dish-info {
+  flex: 1;
+}
+
+.dish-info strong {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.dish-info .availability {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.availability.available {
+  background: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+
+.availability.unavailable {
+  background: rgba(220, 53, 69, 0.2);
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+.dish-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.dish-actions button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.dish-actions button:first-child {
+  background: #C89B3C;
+  color: black;
+}
+
+.dish-actions button:last-child {
+  background: #dc3545;
+  color: white;
+}
+
+.dish-actions button:first-child:hover {
+  background: #b38630;
+  transform: translateY(-2px);
+}
+
+.dish-actions button:last-child:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+}
+
+.review-admin-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: #2a2a2a;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #333;
+}
+
+.review-admin-item > div {
+  flex: 1;
+}
+
+.review-admin-item strong {
+  color: #C89B3C;
+  font-size: 1.1rem;
+}
+
+.review-admin-item p {
+  color: #b4b4b4;
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+.review-admin-item small {
+  color: #666;
+}
+
+.review-admin-item button {
+  padding: 0.5rem 1rem;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-left: 1rem;
+}
+
+.review-admin-item button:hover {
+  background: #c82333;
+  transform: translateY(-2px);
+}
+
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.order-admin-item {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #333;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333;
+  margin-bottom: 1rem;
+}
+
+.order-id {
+  font-weight: bold;
+  color: #C89B3C;
+  font-size: 1.2rem;
+}
+
+.order-status {
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.status-новый {
+  background: rgba(0, 123, 255, 0.2);
+  color: #007bff;
+  border: 1px solid #007bff;
+}
+
+.status-готовится {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  border: 1px solid #ffc107;
+}
+
+.status-доставлен {
+  background: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  border: 1px solid #28a745;
+}
+
+.order-date {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order-customer,
+.order-address {
+  color: #b4b4b4;
+}
+
+.order-items ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0;
+}
+
+.order-items li {
+  padding: 0.3rem 0;
+  color: #b4b4b4;
+  border-bottom: 1px dashed #333;
+}
+
+.order-items li small {
+  display: block;
+  color: #666;
+  font-size: 0.8rem;
+  margin-left: 1rem;
+}
+
+.order-total {
+  font-size: 1.2rem;
+  color: #C89B3C;
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.no-items {
+  text-align: center;
+  color: #666;
+  padding: 3rem;
+  font-size: 1.2rem;
+}
+
+.category-badge {
+  display: inline-block;
+  margin-left: 1rem;
+  padding: 0.2rem 0.8rem;
+  background: rgba(200, 155, 60, 0.1);
+  color: #C89B3C;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.order-count {
+  margin-left: 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.form-actions button {
+  flex: 1;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.form-actions button:first-child {
+  background: #666;
+  color: white;
+}
+
+.form-actions button:last-child {
+  background: #C89B3C;
+  color: black;
+}
+
+.form-actions button:first-child:hover {
+  background: #777;
+}
+
+.form-actions button:last-child:hover {
+  background: #b38630;
+}

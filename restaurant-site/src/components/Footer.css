@@ -1,0 +1,17 @@
+.footer{
+    margin-top: 40px;
+    padding: 30px;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    font-size: 14px;
+    background-color: #33333380;
+    color: #b4b4b4;
+}
+.footer-links {
+    margin-top: 10px;
+}
+.footer-links a {
+    margin: 0 10px;
+    color: #b4b4b4;
+    text-decoration: none;
+}

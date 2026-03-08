@@ -1,4 +1,4 @@
-header {
+/* header {
     background-color: #2c1a0d;
     color: white;
     padding: 2rem;
@@ -7,15 +7,42 @@ header {
 header h1 {
     font-size: 3em;
     margin: 0;
+} */
+
+.home{
+    padding: 40px 0;
+    min-height: 60vh;
 }
 
-main {
-    min-height: 40vh;
-    padding: 2rem;
+.hero {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+    background: linear-gradient(rgba(1, 1, 70, 0.6), rgba(24, 30, 51, 0.8)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600');
+    background-size: cover;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 4em;
+    margin-bottom: 1rem;
+}
+
+.featured {
+    padding: 4rem 2rem;
+    background: #010228;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.btn-sign {
+
+.menubtn {
     background-color: #e67e22;
     color: white;
     padding: 1rem 2rem;
@@ -27,7 +54,7 @@ main {
     transition: all 0.3s ease-in-out;
 }
 
-.btn-sign:hover {
+.menubtn:hover {
     background-color: #c65300;
     transform: translate(0, -2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -41,10 +68,10 @@ main {
 
 
 
-footer {
+/* footer {
   background-color: #272727;
   color: white;
   text-align: center;
   padding: 1rem;
   margin-top: 2rem;
-}
+} */
