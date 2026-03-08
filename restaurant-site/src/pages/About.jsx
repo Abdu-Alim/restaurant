@@ -77,7 +77,7 @@ function About() {
           <h2>Наша команда</h2>
           <div className="team-grid">
             <div className="team-member">
-              <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?w=400" alt="Шеф-повар" />
+              <img src="#" alt="Шеф-повар" />
               <h3>Савицкий Александр</h3>
               <p>Шеф-повар из Колледжа</p>
             </div>
@@ -87,7 +87,7 @@ function About() {
               <p>Управляющий рестораном</p>
             </div>
             <div className="team-member">
-              <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=400" alt="Сомелье" />
+              <img src="#" alt="Сомелье" />
               <h3>Saturnino Erika</h3>
               <p>Пивной сомелье</p>
             </div>

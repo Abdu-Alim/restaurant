@@ -7,14 +7,14 @@ const initialState = {
     {
       id: 1,
       name: 'Админ',
-      email: 'admin@admin.kg',
+      email: 'abdualimshirahunov@gmail.com',
       password: '123',
       role: 'admin'
     },
     {
       id: 2,
-      name: 'Тестовый пользователь',
-      email: 'user@test.com',
+      name: 'Абду-Алим',
+      email: 'shirakhunov_al@iuca.kg',
       password: '123',
       role: 'user'
     }
