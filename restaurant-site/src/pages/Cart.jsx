@@ -71,7 +71,7 @@ function Cart() {
   return (
     <div className="cart-page">
       <h1>Корзина</h1>
-      
+
       <div className="cart-items">
         {items.map((item, index) => (
           <div key={index} className="cart-item">
@@ -86,7 +86,7 @@ function Cart() {
                 </div>
               )}
             </div>
-            
+
             <div className="cart-item-controls">
               <div className="quantity-control">
                 <button onClick={() => dispatch(updateQuantity({ index, quantity: item.quantity - 1 }))}>
@@ -97,9 +97,9 @@ function Cart() {
                   +
                 </button>
               </div>
-              
-              <span className="item-price">{item.price * item.quantity} сом</span> {}
-              <button 
+
+              <span className="item-price">{item.price * item.quantity} сом</span> { }
+              <button
                 className="remove-btn"
                 onClick={() => dispatch(removeFromCart(index))}
               >
@@ -111,46 +111,46 @@ function Cart() {
       </div>
 
       <div className="cart-footer">
-    <div className="cart-total">
-      <span>Итого:</span>
-      <span className="total-price">{total} сом</span>
-    </div>
+        <div className="cart-total">
+          <span>Итого:</span>
+          <span className="total-price">{total} сом</span>
+        </div>
 
-    {}
-    <div style={{ marginBottom: '1rem' }}>
-      <label htmlFor="district">Район доставки:</label>
-      <select 
-        id="district"
-        value={selectedDistrict}
-        onChange={(e) => setSelectedDistrict(e.target.value)}
-        style={{ width: '100%', padding: '0.5rem', marginTop: '0.5rem', marginBottom: '1rem' }}
-      >
-        <option value="">Выберите район</option>
-        {deliveryAreas.map(area => (
-          <option key={area} value={area}>{area}</option>
-        ))}
-      </select>
+        { }
+        <div style={{ marginBottom: '1rem' }}>
+          <label htmlFor="district">Район доставки:</label>
+          <select
+            id="district"
+            value={selectedDistrict}
+            onChange={(e) => setSelectedDistrict(e.target.value)}
+            style={{ width: '100%', padding: '0.5rem', marginTop: '0.5rem', marginBottom: '1rem' }}
+          >
+            <option value="">Выберите район</option>
+            {deliveryAreas.map(area => (
+              <option key={area} value={area}>{area}</option>
+            ))}
+          </select>
 
-      <label htmlFor="addressDetails">Подробный адрес (улица, дом, квартира):</label>
-      <input 
-        type="text"
-        id="addressDetails"
-        value={addressDetails}
-        onChange={(e) => setAddressDetails(e.target.value)}
-        placeholder="Например: ул. Ленина, 10, кв. 5"
-        style={{ width: '100%', padding: '0.5rem', marginTop: '0.5rem' }}
-      />
-    </div>
-    
-    <div className="cart-actions">
-      <button className="clear-btn" onClick={() => dispatch(clearCart())}>
-        Очистить корзину
-      </button>
-      <button className="checkout-btn" onClick={handleCheckout}>
-        Оформить заказ
-      </button>
-    </div>
-  </div>
+          <label htmlFor="addressDetails">Подробный адрес (улица, дом, квартира):</label>
+          <input
+            type="text"
+            id="addressDetails"
+            value={addressDetails}
+            onChange={(e) => setAddressDetails(e.target.value)}
+            placeholder="Например: ул. Ленина, 10, кв. 5"
+            style={{ width: '100%', padding: '0.5rem', marginTop: '0.5rem' }}
+          />
+        </div>
+
+        <div className="cart-actions">
+          <button className="clear-btn" onClick={() => dispatch(clearCart())}>
+            Очистить корзину
+          </button>
+          <button className="checkout-btn" onClick={handleCheckout}>
+            Оформить заказ
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

@@ -246,7 +246,7 @@
   border: 1px solid #333;
 }
 
-.review-admin-item > div {
+.review-admin-item>div {
   flex: 1;
 }
 

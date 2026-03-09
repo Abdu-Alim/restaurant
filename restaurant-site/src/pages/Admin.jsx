@@ -9,12 +9,12 @@ function Admin() {
   const { items: dishes } = useSelector(state => state.dishes);
   const { items: reviews } = useSelector(state => state.reviews);
   const { items: orders } = useSelector(state => state.orders);
-  
+
   const [activeTab, setActiveTab] = useState('dishes');
   const [editingDish, setEditingDish] = useState(null);
-  
+
   const categories = ['Горячие блюда', 'Колбаски и закуски', 'Пиво и напитки', 'Десерты'];
-  
+
   const [newDish, setNewDish] = useState({
     name: '',
     description: '',
@@ -56,21 +56,21 @@ function Admin() {
   return (
     <div className="admin-page">
       <h1>Панель администратора</h1>
-      
+
       <div className="admin-tabs">
-        <button 
+        <button
           className={activeTab === 'dishes' ? 'active' : ''}
           onClick={() => setActiveTab('dishes')}
         >
           Блюда
         </button>
-        <button 
+        <button
           className={activeTab === 'orders' ? 'active' : ''}
           onClick={() => setActiveTab('orders')}
         >
           Заказы ({orders.length})
         </button>
-        <button 
+        <button
           className={activeTab === 'reviews' ? 'active' : ''}
           onClick={() => setActiveTab('reviews')}
         >
@@ -81,7 +81,7 @@ function Admin() {
       {activeTab === 'dishes' && (
         <div className="admin-section">
           <h2>Управление блюдами</h2>
-          
+
           {editingDish ? (
             <form onSubmit={handleUpdateDish} className="add-dish-form">
               <h3>Редактировать блюдо</h3>
@@ -89,25 +89,25 @@ function Admin() {
                 type="text"
                 placeholder="Название блюда"
                 value={editingDish.name}
-                onChange={(e) => setEditingDish({...editingDish, name: e.target.value})}
+                onChange={(e) => setEditingDish({ ...editingDish, name: e.target.value })}
                 required
               />
               <textarea
                 placeholder="Описание"
                 value={editingDish.description}
-                onChange={(e) => setEditingDish({...editingDish, description: e.target.value})}
+                onChange={(e) => setEditingDish({ ...editingDish, description: e.target.value })}
                 required
               />
               <input
                 type="number"
                 placeholder="Цена"
                 value={editingDish.price}
-                onChange={(e) => setEditingDish({...editingDish, price: e.target.value})}
+                onChange={(e) => setEditingDish({ ...editingDish, price: e.target.value })}
                 required
               />
               <select
                 value={editingDish.category}
-                onChange={(e) => setEditingDish({...editingDish, category: e.target.value})}
+                onChange={(e) => setEditingDish({ ...editingDish, category: e.target.value })}
               >
                 {categories.map(cat => (
                   <option key={cat} value={cat}>{cat}</option>
@@ -117,13 +117,13 @@ function Admin() {
                 type="text"
                 placeholder="URL изображения (оставьте пустым для автоматического)"
                 value={editingDish.image}
-                onChange={(e) => setEditingDish({...editingDish, image: e.target.value})}
+                onChange={(e) => setEditingDish({ ...editingDish, image: e.target.value })}
               />
               <label>
                 <input
                   type="checkbox"
                   checked={editingDish.hasOptions}
-                  onChange={(e) => setEditingDish({...editingDish, hasOptions: e.target.checked})}
+                  onChange={(e) => setEditingDish({ ...editingDish, hasOptions: e.target.checked })}
                 />
                 Есть опции/добавки
               </label>
@@ -139,25 +139,25 @@ function Admin() {
                 type="text"
                 placeholder="Название блюда"
                 value={newDish.name}
-                onChange={(e) => setNewDish({...newDish, name: e.target.value})}
+                onChange={(e) => setNewDish({ ...newDish, name: e.target.value })}
                 required
               />
               <textarea
                 placeholder="Описание"
                 value={newDish.description}
-                onChange={(e) => setNewDish({...newDish, description: e.target.value})}
+                onChange={(e) => setNewDish({ ...newDish, description: e.target.value })}
                 required
               />
               <input
                 type="number"
                 placeholder="Цена"
                 value={newDish.price}
-                onChange={(e) => setNewDish({...newDish, price: e.target.value})}
+                onChange={(e) => setNewDish({ ...newDish, price: e.target.value })}
                 required
               />
               <select
                 value={newDish.category}
-                onChange={(e) => setNewDish({...newDish, category: e.target.value})}
+                onChange={(e) => setNewDish({ ...newDish, category: e.target.value })}
               >
                 {categories.map(cat => (
                   <option key={cat} value={cat}>{cat}</option>
@@ -167,13 +167,13 @@ function Admin() {
                 type="text"
                 placeholder="URL изображения (оставьте пустым для автоматического)"
                 value={newDish.image}
-                onChange={(e) => setNewDish({...newDish, image: e.target.value})}
+                onChange={(e) => setNewDish({ ...newDish, image: e.target.value })}
               />
               <label>
                 <input
                   type="checkbox"
                   checked={newDish.hasOptions}
-                  onChange={(e) => setNewDish({...newDish, hasOptions: e.target.checked})}
+                  onChange={(e) => setNewDish({ ...newDish, hasOptions: e.target.checked })}
                 />
                 Есть опции/добавки
               </label>
@@ -233,7 +233,7 @@ function Admin() {
                             {item.options && (
                               <small>
                                 {item.options.sauce && ` (Соус: ${item.options.sauce})`}
-                                {item.options.additions?.length > 0 && 
+                                {item.options.additions?.length > 0 &&
                                   ` (Добавки: ${item.options.additions.join(', ')})`}
                               </small>
                             )}

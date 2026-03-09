@@ -18,7 +18,7 @@ function Menu() {
   const filteredDishes = items.filter(dish => {
     const matchesCategory = selectedCategory === 'Все' || dish.category === selectedCategory;
     const matchesSearch = dish.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                          dish.description.toLowerCase().includes(searchQuery.toLowerCase());
+      dish.description.toLowerCase().includes(searchQuery.toLowerCase());
     return matchesCategory && matchesSearch;
   });
 
@@ -58,7 +58,7 @@ function Menu() {
     <div className="menu-page">
       <div className="menu-header">
         <h1>Меню</h1>
-        
+
         <div className="menu-filters">
           <div className="category-filter">
             {categories.map(cat => (
@@ -71,7 +71,7 @@ function Menu() {
               </button>
             ))}
           </div>
-          
+
           <input
             type="text"
             placeholder="Поиск по блюдам..."
@@ -91,9 +91,9 @@ function Menu() {
           {filteredDishes.map(dish => (
             <div key={dish.id} className="menu-item">
               <div className="menu-item-image">
-                <img 
-                  src={dish.image || `https://source.unsplash.com/300x200/?german-food,${dish.name}`} 
-                  alt={dish.name} 
+                <img
+                  src={dish.image || `https://source.unsplash.com/300x200/?german-food,${dish.name}`}
+                  alt={dish.name}
                 />
                 {!dish.available && (
                   <div className="out-of-stock">Нет в наличии</div>
@@ -109,7 +109,7 @@ function Menu() {
                       Настроить
                     </Link>
                   ) : (
-                    <button 
+                    <button
                       className="add-btn"
                       disabled={!dish.available}
                       onClick={() => handleAddToCart(dish)}

@@ -9,9 +9,9 @@ function DishCard() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { items } = useSelector(state => state.dishes);
-  
+
   const dish = items.find(d => d.id === parseInt(id));
-  
+
   const [selectedOptions, setSelectedOptions] = useState({
     sauce: null,
     additions: []
@@ -31,8 +31,8 @@ function DishCard() {
   ];
 
   const handleAddToCart = () => {
-    const totalPrice = dish.price + 
-      (selectedOptions.sauce?.price || 0) + 
+    const totalPrice = dish.price +
+      (selectedOptions.sauce?.price || 0) +
       selectedOptions.additions.reduce((sum, a) => sum + a.price, 0);
 
     dispatch(addToCart({
@@ -46,25 +46,25 @@ function DishCard() {
       }
     }));
     dispatch(incrementOrderCount(dish.id));
-    
+
     alert('Блюдо добавлено в корзину!');
-    
+
     navigate('/menu');
   };
 
   return (
     <div className="dish-details">
       <div className="dish-details-image">
-        <img 
-          src={dish.image || `https://source.unsplash.com/600x400/?german-food,${dish.name}`} 
-          alt={dish.name} 
+        <img
+          src={dish.image || `https://source.unsplash.com/600x400/?german-food,${dish.name}`}
+          alt={dish.name}
         />
       </div>
-      
+
       <div className="dish-details-info">
         <h1>{dish.name}</h1>
         <p className="description">{dish.description}</p>
-        
+
         <div className="price-section">
           <span className="price-label">Базовая цена:</span>
           <span className="base-price">{dish.price} сом</span>
@@ -78,7 +78,7 @@ function DishCard() {
                 <input
                   type="radio"
                   name="sauce"
-                  onChange={() => setSelectedOptions({...selectedOptions, sauce})}
+                  onChange={() => setSelectedOptions({ ...selectedOptions, sauce })}
                 />
                 <div className="option-content">
                   <span className="option-name">{sauce.name}</span>
@@ -120,8 +120,8 @@ function DishCard() {
         <div className="total-price-section">
           <span>Итого:</span>
           <span className="total-price">
-            {dish.price + 
-              (selectedOptions.sauce?.price || 0) + 
+            {dish.price +
+              (selectedOptions.sauce?.price || 0) +
               selectedOptions.additions.reduce((sum, a) => sum + a.price, 0)} сом
           </span>
         </div>
