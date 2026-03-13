@@ -7,10 +7,10 @@
     background-color: #33333380;
     color: #b4b4b4;
 }
-.footer-links {
+.nav {
     margin-top: 10px;
 }
-.footer-links a {
+.nav a {
     margin: 0 10px;
     color: #b4b4b4;
     text-decoration: none;

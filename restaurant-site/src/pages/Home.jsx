@@ -2,7 +2,7 @@ import './Home.css';
 // import { dishes } from '../data/dishes';
 import { useSelector } from 'react-redux';
 import Popular from './Popular.jsx'; 
-import Footer from '../components/Footer.jsx';
+// import Footer from '../components/Footer.jsx';
 
 function Home() {
   const { items: dishes } = useSelector(state => state.dishes);
