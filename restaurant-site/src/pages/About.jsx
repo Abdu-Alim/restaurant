@@ -77,7 +77,7 @@ function About() {
           <h2>Наша команда</h2>
           <div className="team-grid">
             <div className="team-member">
-              <img src="/src/assets/sasha.png" alt="Шеф-повар" />
+              <img src="/sasha.png" alt="Шеф-повар" />
               <h3>Савицкий Александр</h3>
               <p>Шеф-повар из Колледжа</p>
             </div>
