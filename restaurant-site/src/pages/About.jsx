@@ -82,12 +82,12 @@ function About() {
               <p>Шеф-повар из Колледжа</p>
             </div>
             <div className="team-member">
-              <img src="/src/assets/alim.png" alt="Управляющий" />
+              <img src="/alim.png" alt="Управляющий" />
               <h3>Ширахунов Абду-Алим</h3>
               <p>Управляющий рестораном</p>
             </div>
             <div className="team-member">
-              <img src="/src/assets/erika.png" alt="Сомелье" />
+              <img src="/erika.png" alt="Сомелье" />
               <h3>Saturnino Erika</h3>
               <p>Пивной сомелье</p>
             </div>
@@ -101,7 +101,7 @@ function About() {
               <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400" alt="Интерьер" />
             </div>
             <div className="gallery-item">
-              <img src="/src/assets/shtudel.png" alt="Блюда" />
+              <img src="/shtudel.png" alt="Блюда" />
             </div>
             <div className="gallery-item">
               <img src="https://images.unsplash.com/photo-1532635241-17e820acc59f?w=400" alt="Пиво" />
