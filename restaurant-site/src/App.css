@@ -121,3 +121,91 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--primary-color);
   color: var(--dark-bg);
 }
+
+/* Адаптивные размеры */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+    padding: 0 1.5rem;
+  }
+
+  .btn {
+    padding: 0.9rem 1.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 992px) {
+  main {
+    padding-top: 70px;
+  }
+
+  .container {
+    max-width: 760px;
+    padding: 0 1.2rem;
+  }
+
+  h1 {
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  body {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .hero {
+    padding: 4rem 1rem 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .container {
+    padding: 0 0.8rem;
+  }
+
+  main {
+    padding-top: 64px;
+  }
+
+  .btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .hero h1,
+  .about-hero h1,
+  .menu-header h1,
+  .cart-page h1 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+  }
+
+  .about-hero {
+    padding: 5rem 1rem;
+    background-attachment: scroll;
+  }
+}
