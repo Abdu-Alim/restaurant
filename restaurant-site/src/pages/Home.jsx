@@ -24,7 +24,7 @@ function Home() {
       <section className="featured">
         <h2>Популярное</h2>
         <div className="grid">
-          {popular.map(dish => <Popular key={dish.id} dish={dish} />)} {}
+          {popular.map(dish => <Popular key={dish.id} dish={dish} />)}
         </div>
       </section>
     </div>

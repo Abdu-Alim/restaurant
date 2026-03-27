@@ -1,8 +1,9 @@
 .menu-page {
-  padding: 2rem;
+  padding: clamp(1rem, 4vw, 2rem);
   max-width: 1400px;
   margin: 0 auto;
   min-height: 60vh;
+  width: 100%;
 }
 
 .menu-header {
@@ -13,11 +14,11 @@
 
 .menu-header h1 {
   color: var(--primary-color);
-  font-size: 3.5rem;
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
   margin-bottom: 1rem;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: clamp(1px, 0.5vw, 3px);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
@@ -95,9 +96,9 @@
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2.5rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  margin-top: clamp(1.5rem, 4vw, 3rem);
 }
 
 .menu-item {
@@ -170,6 +171,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid var(--border-color);
@@ -228,4 +231,50 @@
   padding: 4rem;
   color: var(--text-muted);
   font-size: 1.2rem;
+}
+
+@media (max-width: 992px) {
+  .category-filter {
+    gap: 0.5rem;
+  }
+
+  .category-filter button {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .search-input {
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .menu-item-image {
+    height: 220px;
+  }
+
+  .menu-item-info {
+    padding: 1.35rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .menu-item-footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .customize-btn,
+  .add-btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .menu-item-image {
+    height: 200px;
+  }
 }

@@ -1,15 +1,16 @@
 .contact-page {
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
+  margin: clamp(1rem, 3vw, 2rem) auto;
+  padding: clamp(1rem, 4vw, 2rem);
   min-height: 60vh;
+  width: 100%;
 }
 
 .contact-page h1 {
   color: #C89B3C;
   text-align: center;
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
+  margin-bottom: clamp(1.5rem, 4vw, 3rem);
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
 }
 
 .contact-grid {
@@ -190,4 +191,43 @@
 
 .form-actions button[type="submit"]:hover {
   background: #b38630;
+}
+
+@media (max-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .reviews-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .reviews-list {
+    max-height: min(50vh, 400px);
+  }
+}
+
+@media (max-width: 576px) {
+  .review-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+
+  .contact-info,
+  .reviews-section {
+    padding: 1.35rem;
+  }
 }

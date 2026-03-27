@@ -1,31 +1,37 @@
 .admin-page {
   max-width: 1200px;
-  margin: 2rem auto;
-  padding: 2rem;
+  margin: clamp(0.75rem, 3vw, 2rem) auto;
+  padding: clamp(1rem, 4vw, 2rem);
   min-height: 60vh;
   background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
-  border-radius: 24px;
+  border-radius: clamp(12px, 2vw, 24px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .admin-page h1 {
   color: #C89B3C;
-  font-size: 2.5rem;
+  font-size: clamp(1.4rem, 4vw, 2.5rem);
   margin-bottom: 2rem;
   text-align: center;
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: clamp(0.05em, 0.5vw, 2px);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .admin-tabs {
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem 1rem;
   margin-bottom: 2rem;
   justify-content: center;
+  flex-wrap: wrap;
   border-bottom: 2px solid #333;
   padding-bottom: 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
 }
 
 .admin-tabs button {
@@ -431,4 +437,80 @@
 
 .form-actions button:last-child:hover {
   background: #b38630;
+}
+
+@media (max-width: 992px) {
+  .admin-section {
+    padding: 1.35rem;
+  }
+
+  .add-dish-form,
+  .dishes-list {
+    padding: 1.35rem;
+  }
+
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dish-admin-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .dish-info .availability {
+    margin-left: 0;
+    margin-top: 0.35rem;
+  }
+
+  .dish-actions {
+    justify-content: stretch;
+  }
+
+  .dish-actions button {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .review-admin-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .review-admin-item button {
+    margin-left: 0;
+    margin-top: 0.75rem;
+    width: 100%;
+  }
+
+  .admin-tabs button {
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-section h2 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+  }
+
+  .add-dish-form input,
+  .add-dish-form textarea,
+  .add-dish-form select {
+    font-size: 16px;
+  }
 }

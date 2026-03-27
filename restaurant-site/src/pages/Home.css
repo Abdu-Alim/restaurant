@@ -16,37 +16,48 @@ header h1 {
 
 .hero {
     text-align: center;
-    padding: 6rem 2rem 4rem;
+    padding: clamp(3.5rem, 10vw, 6rem) clamp(1rem, 4vw, 2rem) clamp(2.5rem, 6vw, 4rem);
     background: linear-gradient(rgba(1, 1, 70, 0.6), rgba(24, 30, 51, 0.8)), url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1600');
     background-size: cover;
+    background-position: center;
     color: white;
 }
 
-.hero h1 {
-    font-size: 4em;
+.hero h1,
+.hero h2 {
+    font-size: clamp(1.75rem, 6vw, 4rem);
     margin-bottom: 1rem;
+    line-height: 1.15;
+}
+
+.hero > p {
+    font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    max-width: 52ch;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .featured {
-    padding: 4rem 2rem;
+    padding: clamp(2rem, 6vw, 4rem) clamp(1rem, 4vw, 2rem);
     background: #010228;
     color: white;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
     max-width: 1200px;
     margin: 0 auto;
+    width: 100%;
 }
 
 
 .menubtn {
     background-color: #e67e22;
     color: white;
-    padding: 1rem 2rem;
-    font-size: 1.2em;
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1.25rem, 4vw, 2rem);
+    font-size: clamp(0.95rem, 2.5vw, 1.2em);
     border: solid 2px;
     border-color: black transparent transparent black;
     border-radius: 8px;
@@ -62,12 +73,19 @@ header h1 {
 }
 
 
-h2 {
-    font-size: 2.5em;
+.featured h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5em);
     margin-bottom: 1rem;
     text-align: center;
     color: #e67e22;
     text-shadow: #c65300 1px 1px 2px;
+}
+
+@media (max-width: 480px) {
+    .menubtn {
+        width: 100%;
+        max-width: 320px;
+    }
 }
 
 

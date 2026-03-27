@@ -2,25 +2,40 @@ import { Link } from "react-router-dom";
 import "./Footer.css";
 
 function Footer() {
-    return (
-        <footer className="footer">
-            <div className="container">
-                <div>
-                    <h3>Zur Gemütlichkeit</h3>
-                    <p>Адрес: ул. Шамшинская, 2, Город: Существует</p>
-                </div>
-                <p>© 2026 Ресторан первой команды. Ни одно из прав не защищено.</p>
-                <nav className="nav">
-                    <Link to="/">Главная</Link>
-                    <Link to="/menu">Меню</Link>
-                </nav>
-                <div>
-                    <p>Телефон: +996-555-55-55-55</p>
-                    <p>Email: zurgemuetlichkeit@gmail.com</p>
-                </div>
-            </div>
-        </footer>
-    )
+  return (
+    <footer className="footer">
+      <div className="footer-inner">
+        <div className="footer-brand">
+          <h3>Zur Gemütlichkeit</h3>
+          <p className="footer-address">
+            Адрес: ул. Шамшинская, 2, Город: Существует
+          </p>
+        </div>
+
+        <nav className="footer-nav" aria-label="Навигация в подвале">
+          <Link to="/">Главная</Link>
+          <Link to="/menu">Меню</Link>
+        </nav>
+
+        <p className="footer-copy">
+          © 2026 Ресторан первой команды. Ни одно из прав не защищено.
+        </p>
+
+        <div className="footer-contact">
+          <p>
+            <span className="footer-contact-label">Телефон:</span>{" "}
+            +996-555-55-55-55
+          </p>
+          <p>
+            <span className="footer-contact-label">Email:</span>{" "}
+            <a href="mailto:zurgemuetlichkeit@gmail.com">
+              zurgemuetlichkeit@gmail.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;

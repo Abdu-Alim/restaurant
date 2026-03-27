@@ -37,7 +37,7 @@ function Popular({ dish }) {
   };
 
   return (
-    <div className="menu-item"> {}
+    <div className="menu-item">
       <div className="menu-item-image">
         <img 
           src={dish.image || `https://source.unsplash.com/300x200/?german-food,${dish.name}`} 
@@ -51,7 +51,7 @@ function Popular({ dish }) {
         <h3>{dish.name}</h3>
         <p>{dish.description}</p>
         <div className="menu-item-footer">
-          <span className="price">{dish.price} сом</span> {}
+          <span className="price">{dish.price} сом</span>
           {dish.hasOptions ? (
             <Link to={`/dish/${dish.id}`} className="customize-btn">
               Настроить
